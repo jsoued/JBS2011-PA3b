@@ -106,8 +106,8 @@ public class GameView  implements Callback{
 		}
 		for (Square d : model.squares) {
 			d=controller.modelToView(d);
-			c.drawRect(d.x - d.w / 2, (d.y - d.w / 2), d.x + d.w / 2,
-					(d.y + d.w / 2), squarePaint);
+			c.drawRect(d.x - d.w / 2, (d.y - d.z / 2), d.x + d.w / 2,
+					(d.y + d.z / 2), squarePaint);
 		}
 		for (Square d : model.targets) {
 			d=controller.modelToView(d);
@@ -115,7 +115,7 @@ public class GameView  implements Callback{
 					(d.y + d.w / 2), targetPaint);
 		}
 		
-		c.drawText("["+Math.round(model.timeRemaining)+"] win="+model.wins+" lose="+model.losses,0,50,textPaint);
+		c.drawText("["+Math.round(model.timeRemaining)+"] score="+model.score+" last score="+model.lastscore,0,50,textPaint);
 	}
 
 	/**
@@ -135,25 +135,24 @@ public class GameView  implements Callback{
 	 */
 	private void createPaints(){
 		backgroundPaint = new Paint();
-		backgroundPaint.setColor(Color.BLUE);
+		backgroundPaint.setColor(Color.LTGRAY);
 
 		diskPaint = new Paint();
 		diskPaint.setColor(Color.BLACK);
 		diskPaint.setAntiAlias(true);
 
 		squarePaint = new Paint();
-		squarePaint.setColor(Color.WHITE);
+		squarePaint.setColor(Color.YELLOW);
 		squarePaint.setAntiAlias(true);
 
 		targetPaint = new Paint();
-		targetPaint.setColor(Color.RED);
+		targetPaint.setColor(Color.DKGRAY);
 		targetPaint.setAntiAlias(true);
 		
 		textPaint = new Paint();
-		textPaint.setColor(Color.GREEN);
+		textPaint.setColor(Color.GRAY);
 		textPaint.setAntiAlias(true);
 		textPaint.setTextSize(40);
-		
 	}
 
 	

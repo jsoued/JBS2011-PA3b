@@ -90,7 +90,7 @@ public class GameController implements OnTouchListener {
 	 * @return new square
 	 */
 	public Square modelToView(Square s){
-		return new Square(s.x/zoom,height-s.y/zoom,s.w/zoom,s.isTarget);
+		return new Square(s.x/zoom,height-s.y/zoom,s.w/zoom, s.z/zoom,s.isTarget);
 	}
 	
 	
